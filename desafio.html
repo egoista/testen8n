@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: Construindo uma Equipe de Agentes de IA Confiáveis</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #555;
+        }
+        h2 {
+            border-bottom-width: 2px;
+        }
+        h3 {
+            font-size: 1.2em;
+            border-bottom: 1px dashed #ccc;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #f4f4f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.9em;
+        }
+        pre code {
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+        strong {
+            color: #0056b3;
+        }
+        .prompt-box {
+            background-color: #eef7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        details {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        summary {
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f7f7f7;
+            cursor: pointer;
+            outline: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            .container {
+                border: none;
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            pre, .prompt-box, table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Plano de Execução Final: Construindo uma Equipe de Agentes de IA Confiáveis</h1>
+
+    <p>Olá, equipe! Bem-vindos ao nosso workshop mais avançado.</p>
+
+    <h3>O Objetivo de Hoje</h3>
+    <p>Hoje, vamos construir uma equipe de agentes cognitivos que não apenas executam tarefas, mas o fazem com <strong>previsibilidade e confiabilidade absolutas</strong>. Faremos isso estabelecendo um <strong>"Contrato de Dados"</strong> com nossos agentes usando <code>JSON Schema</code>, garantindo que a saída seja sempre perfeita.</p>
+
+    <h3>Nossa Arquitetura de Elite</h3>
+    <ol>
+        <li><strong>Agente Orquestrador:</strong> Cria um "dossiê de projeto" em JSON, seguindo um schema rigoroso.</li>
+        <li><strong>Agente Analista (AI):</strong> Usa ferramentas para buscar dados e preencher os cálculos, aderindo ao mesmo schema.</li>
+        <li><strong>Agente Redator (AI):</strong> Lê o dossiê e cria uma proposta em HTML, atualizando o dossiê conforme o schema.</li>
+        <li><strong>Agente Notificador (AI):</strong> Analisa o negócio e cria um alerta para o Slack, finalizando o dossiê segundo o schema.</li>
+    </ol>
+    <p>Vamos começar!</p>
+
+    <h2>Passo 0: A Preparação</h2>
+    <p>Antes de abrir o n8n, precisamos da nossa "base de conhecimento".</p>
+    <ol>
+        <li><strong>Crie o Arquivo Excel:</strong>
+            <ul>
+                <li>Acesse sua conta do OneDrive ou Microsoft 365.</li>
+                <li>Crie um novo arquivo Excel chamado <code>Base_Calculo_Eventos.xlsx</code>.</li>
+                <li>Crie três abas (<code>Dimensionamento</code>, <code>Custos</code>, <code>Logistica_Frete</code>) e preencha-as com os dados abaixo.</li>
+            </ul>
+        </li>
+    </ol>
+    <details>
+        <summary><b>Clique para ver os dados das planilhas</b></summary>
+        <h4>Aba 1: <code>Dimensionamento</code></h4>
+        <table>
+            <thead><tr><th>Porte do Evento</th><th>Min Pessoas</th><th>Max Pessoas</th><th>Maquinas Zig</th><th>Staff Zig</th></tr></thead>
+            <tbody>
+                <tr><td>Pequeno</td><td>10</td><td>50</td><td>2</td><td>1</td></tr>
+                <tr><td>Médio</td><td>51</td><td>150</td><td>4</td><td>2</td></tr>
+                <tr><td>Grande</td><td>151</td><td>300</td><td>8</td><td>4</td></tr>
+                <tr><td>Mega</td><td>301</td><td>1000</td><td>15</td><td>8</td></tr>
+            </tbody>
+        </table>
+        <h4>Aba 2: <code>Custos</code></h4>
+        <table>
+            <thead><tr><th>Item</th><th>Valor (R$)</th><th>Unidade</th></tr></thead>
+            <tbody>
+                <tr><td>Custo por Pessoa (Bebidas)</td><td>120</td><td>por pessoa</td></tr>
+                <tr><td>Custo por Máquina (Aluguel)</td><td>500</td><td>por máquina</td></tr>
+                <tr><td>Custo por Staff (Diária)</td><td>350</td><td>por pessoa</td></tr>
+                <tr><td>Taxa de Serviço (%)</td><td>10</td><td>sobre o subtotal</td></tr>
+            </tbody>
+        </table>
+        <h4>Aba 3: <code>Logistica_Frete</code></h4>
+        <table>
+            <thead><tr><th>Faixa CEP Inicial</th><th>Faixa CEP Final</th><th>Valor Frete (R$)</th></tr></thead>
+            <tbody>
+                <tr><td>01000-000</td><td>05999-999</td><td>300</td></tr>
+                <tr><td>06000-000</td><td>09999-999</td><td>450</td></tr>
+                <tr><td>10000-000</td><td>19999-999</td><td>600</td></tr>
+            </tbody>
+        </table>
+    </details>
+
+    <h2>Passo 1: O Ponto de Partida (Formulário)</h2>
+    <ol>
+        <li>No n8n, adicione um nó <strong>Form Trigger</strong> e nomeie-o <code>1. Formulário de Orçamento</code>.</li>
+        <li><strong>Configure os Campos</strong> (os nomes internos (<code>Field Name</code>) são importantes!):
+            <ul>
+                <li><code>nome_da_empresa_cliente</code></li>
+                <li><code>nome_do_contato</code></li>
+                <li><code>email_do_contato_para_envio</code> (Tipo: Email)</li>
+                <li><code>tipo_de_evento</code></li>
+                <li><code>numero_estimado_de_pessoas</code> (Tipo: Number)</li>
+                <li><code>cep_do_local_do_evento</code></li>
+                <li><code>observacoes_do_cliente</code> (Tipo: Textarea)</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Passo 2: O Arquiteto (Agente Orquestrador com Schema)</h2>
+    <p>Este agente define o "contrato de dados" que todos seguirão.</p>
+    <ol>
+        <li><strong>Adicione a Lógica do Agente:</strong> Adicione um nó <strong>Agent</strong> (do pacote LangChain) e nomeie-o <code>2. Agente Orquestrador</code>.</li>
+        <li><strong>Adicione e Conecte o Motor de IA:</strong> Adicione um <strong>OpenAI Chat Model</strong> e conecte-o à entrada <strong>Language Model</strong> (ícone de cérebro) do agente.</li>
+        <li><strong>Configure o Agente:</strong>
+            <ul>
+                <li><strong>Output Parser:</strong> Selecione <strong>JSON</strong>.</li>
+                <li><strong>Output Schema:</strong> Este é o passo crucial. Cole o <code>JSON Schema</code> completo abaixo neste campo.</li>
+            </ul>
+        </li>
+    </ol>
+    <details>
+        <summary><b>Clique para ver o JSON Schema completo (Copie este código)</b></summary>
+        <pre><code>{
+	"type": "object",
+	"properties": {
+		"customer_data": {
+			"type": "object",
+			"properties": {
+				"company_name": { "type": "string" },
+				"contact_name": { "type": "string" },
+				"contact_email": { "type": "string" },
+				"event_type": { "type": "string" },
+				"person_count": { "type": "number" },
+				"cep": { "type": "string" },
+				"notes": { "type": "string" }
+			}
+		},
+		"analysis_result": {
+			"type": "object",
+			"properties": {
+				"status": { "type": "string" },
+				"qtde_maquinas": { "type": ["number", "null"] },
+				"qtde_staff": { "type": ["number", "null"] },
+				"custo_por_pessoa": { "type": ["number", "null"] },
+				"custo_por_maquina": { "type": ["number", "null"] },
+				"custo_por_staff": { "type": ["number", "null"] },
+				"total_custo_pessoas": { "type": ["number", "null"] },
+				"total_custo_maquinas": { "type": ["number", "null"] },
+				"total_custo_staff": { "type": ["number", "null"] },
+				"valor_frete": { "type": ["number", "null"] },
+				"subtotal": { "type": ["number", "null"] },
+				"taxa_servico": { "type": ["number", "null"] },
+				"valor_total": { "type": ["number", "null"] },
+				"observacoes_ia": { "type": ["string", "null"] }
+			}
+		},
+		"email_result": {
+			"type": "object",
+			"properties": {
+				"status": { "type": "string" },
+				"email_html_body": { "type": ["string", "null"] }
+			}
+		},
+		"notification_result": {
+			"type": "object",
+			"properties": {
+				"status": { "type": "string" },
+				"slack_message_text": { "type": ["string", "null"] }
+			}
+		}
+	}
+}</code></pre>
+    </details>
+    <ol start="4">
+        <li><strong>Configure o Prompt:</strong> No campo <strong>Prompt</strong> do agente, cole o seguinte:
+        <div class="prompt-box">
+        <pre><code>Você é um arquiteto de automação. Sua tarefa é criar a estrutura inicial de um plano de projeto, preenchendo a seção 'customer_data' com as informações fornecidas. Sua resposta DEVE seguir estritamente o JSON Schema definido.
+
+DADOS DO CLIENTE:
+- Nome da Empresa: {{ $('1. Formulário de Orçamento').first().json.nome_da_empresa_cliente }}
+- Nome do Contato: {{ $('1. Formulário de Orçamento').first().json.nome_do_contato }}
+- Email do Contato: {{ $('1. Formulário de Orçamento').first().json.email_do_contato_para_envio }}
+- Tipo de Evento: {{ $('1. Formulário de Orçamento').first().json.tipo_de_evento }}
+- Número de Pessoas: {{ $('1. Formulário de Orçamento').first().json.numero_estimado_de_pessoas }}
+- CEP: {{ $('1. Formulário de Orçamento').first().json.cep_do_local_do_evento }}
+- Observações: {{ $('1. Formulário de Orçamento').first().json.observacoes_do_cliente }}</code></pre>
+        </div>
+        </li>
+        <li><strong>Conecte o Fluxo:</strong> <code>Formulário</code> → <code>Agente Orquestrador</code>.</li>
+    </ol>
+
+    <h2>Passo 3: O Especialista em Números (Agente Analista)</h2>
+    <ol>
+        <li><strong>Adicione o Agente Analista:</strong> Adicione um nó <strong>Agent</strong> (<code>3. Agente Analista</code>).</li>
+        <li><strong>Adicione e Conecte as Ferramentas:</strong>
+            <ul>
+                <li>Adicione <strong>três</strong> nós <strong><code>Microsoft Excel Tool</code></strong> (<code>read_dimensionamento_sheet</code>, <code>read_costs_sheet</code>, <code>read_shipping_costs</code>).</li>
+                <li>Configure cada um para ler a aba correta do seu arquivo Excel.</li>
+                <li>Conecte a saída de cada um dos três nós de ferramenta à entrada <strong>Tool</strong> (ícone de martelo) do <code>Agente Analista</code>.</li>
+            </ul>
+        </li>
+        <li><strong>Configure o Agente Analista:</strong>
+            <ul>
+                <li>Adicione e conecte seu <strong>Motor de IA</strong> (<code>OpenAI Chat Model</code>).</li>
+                <li>Defina o <strong>Output Parser</strong> como <strong>JSON</strong> e cole o <strong>mesmo <code>JSON Schema</code> completo</strong> do passo anterior no campo <strong>Output Schema</strong>.</li>
+                <li>No campo <strong>Prompt</strong>, cole:
+                <div class="prompt-box">
+                <pre><code>=Você é o Analista Financeiro. Sua única tarefa é preencher TODOS os campos nulos na seção 'analysis_result' do plano de projeto que você recebeu, usando as ferramentas fornecidas para buscar os dados. Sua resposta DEVE retornar o objeto JSON completo e atualizado, seguindo o schema.
+
+PLANO DO PROJETO ATUAL:
+{{ JSON.stringify($json) }}</code></pre>
+                </div>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Conecte o Fluxo:</strong> <code>Agente Orquestrador</code> → <code>Agente Analista</code>.</li>
+    </ol>
+
+    <h2>Passo 4: O Especialista em Persuasão (Agente Redator)</h2>
+    <ol>
+        <li><strong>Adicione o Agente Redator:</strong> Adicione um nó <strong>Agent</strong> (<code>4. Agente Redator</code>).</li>
+        <li><strong>Configure o Agente:</strong>
+            <ul>
+                <li>Adicione e conecte seu <strong>Motor de IA</strong>.</li>
+                <li>Defina o <strong>Output Parser</strong> como <strong>JSON</strong> e cole o <strong>mesmo <code>JSON Schema</code></strong> no campo <strong>Output Schema</strong>.</li>
+                <li>No campo <strong>Prompt</strong>, cole:
+                <div class="prompt-box">
+                <pre><code>Você é um redator de vendas sênior. Sua tarefa é analisar o plano de projeto e escrever um e-mail de proposta profissional em HTML.
+
+PLANO DO PROJETO COM CÁLCULOS:
+{{ JSON.stringify($json) }}
+
+SUA TAREFA:
+1. Escreva do zero o conteúdo completo de um e-mail de proposta em HTML. O código HTML DEVE ser uma string contínua, sem caracteres de nova linha como '\\n'.
+2. Pegue o JSON do plano original, insira o HTML que você criou no campo 'email_result.email_html_body' e mude o status para 'complete'.
+3. Sua resposta DEVE retornar o objeto JSON completo e atualizado, seguindo o schema.</code></pre>
+                </div>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Adicione a Ação de E-mail:</strong>
+            <ul>
+                <li>Adicione um nó <strong>Microsoft Outlook</strong> (<code>4b. Envia Proposta por E-mail</code>).</li>
+                <li><strong>To:</strong> <code>={{ $json.output.customer_data.contact_email }}</code></li>
+                <li><strong>Subject:</strong> <code>=Proposta de Evento Zig para {{ $json.output.customer_data.company_name }}</code></li>
+                <li><strong>Body Content:</strong> <code>={{ $json.output.email_result.email_html_body }}</code></li>
+                <li><strong>Additional Fields > Body Content Type:</strong> <code>HTML</code>.</li>
+            </ul>
+        </li>
+        <li><strong>Conecte o Fluxo:</strong> <code>Agente Analista</code> → <code>Agente Redator</code> → <code>Microsoft Outlook</code>.</li>
+    </ol>
+
+    <h2>Passo 5: O Estrategista Interno (Agente Notificador)</h2>
+    <ol>
+        <li><strong>Adicione o Agente Notificador:</strong> Adicione um nó <strong>Agent</strong> (<code>5. Agente Notificador</code>).</li>
+        <li><strong>Configure o Agente:</strong>
+            <ul>
+                <li>Adicione e conecte seu <strong>Motor de IA</strong>.</li>
+                <li>Defina o <strong>Output Parser</strong> como <strong>JSON</strong> e cole o <strong>mesmo <code>JSON Schema</code></strong> no campo <strong>Output Schema</strong>.</li>
+                <li>No campo <strong>Prompt</strong>, cole:
+                <div class="prompt-box">
+                <pre><code>Você é um assistente estratégico da equipe de vendas. Sua função é analisar uma proposta enviada e criar um alerta interno para o Slack com o tom correto.
+
+PLANO DO PROJETO ENVIADO:
+{{ JSON.stringify($json) }}
+
+SUA TAREFA:
+1. Analise o plano, especialmente o 'valor_total'. Se for acima de R$15.000, crie uma mensagem de "Lead de Alto Valor". Caso contrário, crie uma mensagem padrão.
+2. Pegue o JSON do plano original, insira a mensagem que você criou no campo 'notification_result.slack_message_text', e mude o status para 'complete'.
+3. Sua resposta DEVE retornar o objeto JSON completo e atualizado, seguindo o schema.</code></pre>
+                </div>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Adicione a Ação do Slack:</strong> Adicione um nó <strong>Slack</strong> (<code>5b. Notifica Equipe no Slack</code>) e configure-o para postar a mensagem gerada.</li>
+        <li><strong>Conecte o Fluxo:</strong> <code>Microsoft Outlook</code> → <code>Agente Notificador</code> → <code>Slack</code>.</li>
+    </ol>
+
+    <h2>Teste Final e Recapitulação</h2>
+    <ol>
+        <li>Preencha o formulário e envie.</li>
+        <li><strong>Verifique os resultados:</strong> O workflow deve rodar de forma estável e previsível. Na execução do n8n, a saída de cada agente de IA será um JSON perfeitamente formatado, garantindo que os nós seguintes nunca falhem por causa de dados mal estruturados.</li>
+    </ol>
+    <p><strong>Parabéns!</strong> Você construiu uma automação robusta e profissional, usando JSON Schema para garantir a confiabilidade da colaboração entre seus agentes de IA.</p>
+</div>
+
+</body>
+</html>
